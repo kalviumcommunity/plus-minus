@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
-public class GameHandler : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
-    private Player P1;
+    public TextMeshProUGUI countDownText;
 
+    public Timer countdownTimer = new Timer(0, 100, true);
     // Start is called before the first frame update
     void Start()
     {
-        P1 = new Player();  
-        P1.name = "Test";
-        P1.score = 100;
-        P1.logPlayer();
+        
     }
 
     // Update is called once per frame
