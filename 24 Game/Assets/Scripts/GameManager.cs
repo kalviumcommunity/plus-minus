@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public TextMeshProUGUI countDownText;
 
-    public Timer countdownTimer = new Timer(0, 100, true);
+    // public Timer countdownTimer = new Timer(0, 100, true);
     // Start is called before the first frame update
     void Start()
     {

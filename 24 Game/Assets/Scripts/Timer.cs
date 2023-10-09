@@ -3,7 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Timer : MonoBehaviour
+public interface ITimer
+{
+    void StartStop();
+    void Reset();
+    float GetElapsedTime();
+}
+
+
+public class Timer : MonoBehaviour, ITimer
 {
     [Header("Component")]
     public TextMeshProUGUI timerText;
@@ -35,6 +43,14 @@ public class Timer : MonoBehaviour
     public void StartStop() {
         isRunning = !isRunning;
     }
+    public void Reset() {
+        elapsedTime = 0;
+    }
+
+    public float GetElapsedTime() {
+        return elapsedTime;
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,5 +67,10 @@ public class Timer : MonoBehaviour
         
         timerText.text = elapsedTime.ToString("0");
         shadowText.text = elapsedTime.ToString("0");
+
+        if (Input.GetKeyDown("space"))
+        {
+            Debug.Log(GetElapsedTime());
+        }
     }
 }
