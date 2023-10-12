@@ -1,0 +1,61 @@
+-- CREATE COMMANDS
+
+CREATE TABLE Player (
+    playerID INT PRIMARY KEY,
+    player_name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE,
+    country VARCHAR(255),
+    player_level INT
+);
+
+INSERT INTO Player (playerID, player_name, email, country, player_level)
+VALUES
+    (1, 'John Doe', 'johndoe@example.com', 'USA', 5),
+    (2, 'Alice Smith', 'alice@example.com', 'Canada', 3),
+    (3, 'Bob Johnson', 'bob@example.com', 'UK', 4);
+
+CREATE TABLE Leaderboard (
+    leaderboardID INT PRIMARY KEY,
+    difficulty VARCHAR(255),
+    country VARCHAR(255),
+    playerID INT,
+    rank INT,
+    FOREIGN KEY (playerId) REFERENCES player(playerID)
+);
+
+CREATE TABLE Achievements (
+    achievementID INT PRIMARY KEY, 
+    playerID INT,
+    itemName VARCHAR(255),
+    quantity INT,
+    FOREIGN KEY (playerId) REFERENCES player(playerID)
+);
+
+CREATE TABLE GameInstance (
+    gameID INT PRIMARY KEY, 
+    playerID INT,
+    difficulty VARCHAR(255),
+    runtime TIME,
+    Result TIME,
+    FOREIGN KEY (playerId) REFERENCES player(playerID)
+);
+
+CREATE TABLE Friends (
+    friendID INT PRIMARY KEY, 
+    player1ID INT,
+    status VARCHAR(255),
+    FOREIGN KEY (player1Id) REFERENCES player(playerID)
+);
+
+
+
+-- ALTER COMMANDS
+
+ALTER TABLE Friends
+ADD player2ID INT;
+
+
+
+-- DROP COMMANDS
+
+DROP TABLE Friends;
