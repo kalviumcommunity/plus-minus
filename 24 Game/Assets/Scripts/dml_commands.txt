@@ -1,0 +1,54 @@
+-- SELECT STATEMENTS
+
+-- INSERT COMMANDS
+
+INSERT INTO Player (playerID, player_name, email, country, player_level)
+VALUES
+    (1, 'John Doe', 'johndoe@example.com', 'USA', 5),
+    (2, 'Alice Smith', 'alice@example.com', 'Canada', 3),
+    (3, 'Bob Johnson', 'bob@example.com', 'UK', 4);
+
+INSERT INTO Leaderboard (leaderboardID, difficulty, country, playerID, rank)
+VALUES
+  (1, 'Easy', 'USA', 1, 1),
+  (2, 'Medium', 'UK', 2, 2),
+  (3, 'Hard', 'Canada', 3, 3),
+  (4, 'Easy', 'Australia', 4, 4),
+  (5, 'Medium', 'Germany', 5, 5);
+
+INSERT INTO Achievements (achievementID, playerID, itemName, quantity)
+VALUES
+  (1, 1, 'First Achievement', 10),
+  (2, 2, 'Second Achievement', 5),
+  (3, 3, 'Third Achievement', 8),
+  (4, 4, 'Fourth Achievement', 12),
+  (5, 5, 'Fifth Achievement', 15);
+
+INSERT INTO GameInstance (gameID, playerID, difficulty, runtime, Result)
+VALUES
+  (1, 1, 'Easy', '00:15:30', '00:12:45'),
+  (2, 2, 'Medium', '00:25:15', '00:22:30'),
+  (3, 3, 'Hard', '00:35:45', '00:33:20'),
+  (4, 4, 'Easy', '00:14:10', '00:11:55'),
+  (5, 5, 'Medium', '00:23:20', '00:21:10');
+
+INSERT INTO Friends (friendID, player1ID, status)
+VALUES
+  (1, 1, 'Active'),
+  (2, 1, 'Pending'),
+  (3, 2, 'Active'),
+  (4, 3, 'Active'),
+  (5, 4, 'Pending');
+
+
+
+-- ALTER COMMANDS
+
+ALTER TABLE Friends
+ADD player2ID INT;
+
+
+
+-- DROP COMMANDS
+
+DROP TABLE Friends;

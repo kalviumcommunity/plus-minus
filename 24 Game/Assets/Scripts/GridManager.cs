@@ -6,8 +6,9 @@ using TMPro;
 
 public class GridManager : MonoBehaviour
 {
-    public GameObject[] textContainers; // Assign your parent GameObjects in the Inspector.
-    private static TextMeshProUGUI[] textMeshPros; // Array to store TextMeshPro components.
+    public GameObject[] textContainers; 
+
+    private static TextMeshProUGUI[] textMeshPros; 
 
     private void Start()
     {
@@ -15,7 +16,6 @@ public class GridManager : MonoBehaviour
         SetRandomText();
     }
 
-    // Initialize the static array of TextMeshPro components.
     private void InitializeTextMeshPros()
     {
         textMeshPros = new TextMeshProUGUI[textContainers.Length];
@@ -32,10 +32,10 @@ public class GridManager : MonoBehaviour
         {
             if (textMeshPro != null)
             {
-                int randomValue = Random.Range(0, 2) * 2 + 2;
+                int randomValue = Random.Range(0, 2) * 2 + 2; // 2 or 4
                 textMeshPro.text = randomValue.ToString();
             }
+            // Debug.Log(textMeshPro);
         }
-        Debug.Log("Text set.");
     }
 }
