@@ -7,7 +7,7 @@ using TMPro;
 public class GridManager : MonoBehaviour
 {
     public GameObject[] textContainers; // Assign your parent GameObjects in the Inspector.
-    private TextMeshProUGUI[] textMeshPros; // Array to store TextMeshPro components.
+    private static TextMeshProUGUI[] textMeshPros; // Array to store TextMeshPro components.
 
     private void Start()
     {
