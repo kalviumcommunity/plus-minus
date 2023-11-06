@@ -18,15 +18,14 @@ public class DatabaseManager : MonoBehaviour
         try
         {
             connection = new MySqlConnection(connectionString);
-            connection.Open();
+            connection.c
 
-            // Create a new table named 'YourTableName'
             string Query = "sample_sql_query";
 
-            MySqlCommand cmd = new MySqlCommand(createTableQuery, connection);
+            MySqlCommand cmd = new MySqlCommand(Query, connection);
             cmd.ExecuteNonQuery();
 
-            Debug.Log("Table created successfully.");
+            Debug.Log("Executed successfully.");
         }
         catch (Exception e)
         {
