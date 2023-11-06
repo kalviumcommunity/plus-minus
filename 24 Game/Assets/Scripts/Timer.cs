@@ -10,6 +10,13 @@ public interface ITimer
     float GetElapsedTime();
 }
 
+public TimerBase()
+    {
+        elapsedTime = 0;
+        isRunning = false;
+        Debug.Log("Constructor function called");
+    }
+
 public class Inheritance {
     public void PrintInheritance() {
         Debug.Log("This function is inherited from another class.");

@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 
-public class GridManager : MonoBehaviour
+public abstract class GridManager : MonoBehaviour
 {
     public GameObject[] textContainers; 
 
