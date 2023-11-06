@@ -6,10 +6,10 @@ using MySql.Data.MySqlClient;
 public class DatabaseManager : MonoBehaviour
 {
     private MySqlConnection connection;
-    private string serverAddress = "your_server_address";
-    private string databaseName = "your_database_name";
-    private string username = "your_username";
-    private string password = "your_password";
+    private string serverAddress = "http://localhost:3306";
+    private string databaseName = "plusminus";
+    private string username = "root";
+    private string password = "test123";
 
     private void Start()
     {
@@ -21,7 +21,7 @@ public class DatabaseManager : MonoBehaviour
             connection.Open();
 
             // Create a new table named 'YourTableName'
-            string createTableQuery = "sample_sql_query";
+            string Query = "sample_sql_query";
 
             MySqlCommand cmd = new MySqlCommand(createTableQuery, connection);
             cmd.ExecuteNonQuery();
